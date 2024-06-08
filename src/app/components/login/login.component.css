@@ -1,0 +1,125 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../../assets/background/bg3.jpg"); /* Certifique-se de que você tenha uma imagem de fundo na pasta assets */
+  background-size: cover;
+  background-position: center;
+  margin: 0; /* Garante que não há margens */
+  padding: 0; /* Garante que não há preenchimento */
+}
+
+.login-form {
+  background: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #28261d;
+  width: 300px;
+  text-align: center;
+  margin: 0;
+  color: #151410;
+}
+
+.login-form h2 {
+  margin-bottom: 20px; 
+}
+
+.form-group {
+  margin-bottom: 20px; 
+  text-align: left; 
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+input:hover {
+  border-color: #28261d; 
+}
+
+input:active {
+  border-color: #28261d;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #6d675d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px; 
+}
+
+button:hover {
+  background-color: #28261d !important;
+}
+
+.register-link {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #556970;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider hr {
+  flex: 1;
+  border: none;
+  height: 1px;
+  background: #ccc;
+  margin: 0 10px;
+}
+
+.divider span {
+  font-size: 20px;
+  color: #556970;
+}
+
+.google-auth {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.googleBtn {
+  margin-top: 30px;
+}
+
+.text-color {
+  color: #556970;
+}
