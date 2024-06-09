@@ -47,6 +47,6 @@ import { MuseumCardComponent } from './components/museum-card/museum-card.compon
     }), // ToastrModule added
   ],
   providers: [provideClientHydration()],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, VinhoDoPortoComponent],
 })
 export class AppModule {}

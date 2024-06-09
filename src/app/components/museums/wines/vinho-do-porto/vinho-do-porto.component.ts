@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './vinho-do-porto.component.css'
 })
 export class VinhoDoPortoComponent {
-
+  museum_name: string = 'MUSEU DO VINHO DO PORTO';
 }

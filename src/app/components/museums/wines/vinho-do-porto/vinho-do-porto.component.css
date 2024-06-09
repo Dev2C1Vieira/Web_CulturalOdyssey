@@ -1,0 +1,156 @@
+/*@import "bootstrap/dist/css/bootstrap.css";*/
+
+header {
+    text-align: center;
+    padding: 1em;
+    background-color: #ebe8dd;
+  }
+
+  .top_container {
+    display: flex;
+    flex-direction: column; /* Orientação vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    gap: 1em;
+    padding: 3em;
+}
+
+.top_container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.top_container_title {
+    font-size: 2.5em;
+    font-family: "Roboto", sans-serif;
+    text-align: center; /* Centraliza o texto dentro do parágrafo */
+}
+
+.center_container {
+    display: flex;
+    flex-direction: column; /* Orientação vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    gap: 1em;
+    padding: 3em;
+    width: 40%;
+    margin: 0 auto; /* Centraliza horizontalmente a seção */
+}
+
+.center_container_text {
+    font-size: 1em;
+    font-family: "Roboto", sans-serif;
+    text-align: justify; /* Justifica o texto */
+    text-align-last: center; /* Centraliza a última linha do texto */
+    -moz-text-align-last: center; /* Centraliza a última linha do texto no Firefox */
+    text-align: -webkit-center; /* Compatibilidade com navegadores WebKit */
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column; /* Orientação vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    gap: 1em;
+    padding: 2em;
+    background-color: #f5f5f5;
+}
+
+.info-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    max-width: 300px;
+    text-align: center;
+    margin: 1em;
+    width: 100%;
+}
+
+.info-card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.info-card p {
+    color: #666;
+}
+
+.museum-info-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #6d675d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .museum-info-button:hover {
+    background-color: #28261d !important;
+  }
+
+  .museum-info-a {
+    text-decoration: none;
+    color: white;
+  }
+
+.info-card-a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.info-card-a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .info-card {
+        max-width: 100%;
+    }
+}
+
+.bottom_container {
+    display: flex;
+    flex-direction: column; /* Orientação vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    gap: 1em;
+    padding: 3em;
+    width: 60%;
+    margin: 0 auto; /* Centraliza horizontalmente a seção */
+}
+
+.map-section {
+    text-align: center;
+    padding: 2em;
+    width: 60rem;
+    background-color: #e9ecef;
+}
+
+.map-section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-family: "Roboto", sans-serif;
+}
+
+.map-container {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.info-card-bottom-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    max-width: 60rem;
+    text-align: center;
+    margin: 1em;
+}
+  
