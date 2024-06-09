@@ -3,13 +3,18 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import firebase from 'firebase/compat/app';
 
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   constructor(
     private auth: AngularFireAuth,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   async googleAuth() {
@@ -21,8 +26,27 @@ export class AuthService {
       );
       const user = result.user;
 
-      if (user && result.additionalUserInfo?.isNewUser) {
-        await this.saveUserData(user);
+      if (user) {
+        if (result.additionalUserInfo?.isNewUser) {
+          await this.saveUserData(user);
+          this.toastr.success('Account created with success! Welcome :)');
+          this.router.navigate(['/']);
+        } else {
+          const userDoc = await this.firestore
+            .collection('users')
+            .doc(user.uid)
+            .get()
+            .toPromise();
+        
+          const isAdmin = userDoc?.get('isAdmin');
+          this.toastr.success('Login with successful!');
+          if (isAdmin) {
+            // User is admin, redirect to dashboard
+            this.router.navigate(['/dashboard']);
+          } else {
+            this.router.navigate(['/']);
+          }
+        }
       }
     } catch (error) {
       console.error('Error during Google authentication:', error);
@@ -38,12 +62,12 @@ export class AuthService {
       const user = credential.user;
 
       if (user) {
-        console.log(user);
-
-        console.log('User registered successfully');
+        if (credential.additionalUserInfo?.isNewUser) {
+          await this.saveUserData(user);
+        }
       }
     } catch (error) {
-     throw error;
+      throw error;
     }
   }
 
@@ -54,7 +78,8 @@ export class AuthService {
         displayName: user.displayName,
         email: user.email,
         photoURL: user.photoURL,
-        // Add any other user data you want to save
+        firstLogin: false,
+        isAdmin: false,
       });
       console.log('User data saved to Firestore successfully');
     } catch (error) {
