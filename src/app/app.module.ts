@@ -16,15 +16,18 @@ import { environment } from '../environments/environment';
 
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
-
-
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -34,12 +37,12 @@ import { ToastrModule } from 'ngx-toastr';
     AngularFirestoreModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
-        timeOut: 3000,
-        positionClass: 'toast-top-right',
-        preventDuplicates: true,
-        tapToDismiss: true,
-        progressBar: true
-      }), // ToastrModule added
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      tapToDismiss: true,
+      progressBar: true,
+    }), // ToastrModule added
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],

@@ -5,3 +5,8 @@ export const getError = (error: any): string | void => {
     return 'auth/email-already-in-use';
   }
 };
+
+export const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
