@@ -10,4 +10,5 @@ export class MuseumCardComponent {
   @Input() image!: string;
   @Input() name!: string;
   @Input() location!: string;
+  @Input() path: string | undefined;
 }
