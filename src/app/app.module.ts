@@ -17,17 +17,16 @@ import { environment } from '../environments/environment';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { MuseumCardComponent } from './components/landing-page/museum-card/museum-card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    DashboardComponent,
-  ],
+  declarations: [AppComponent, LoginComponent, RegisterComponent,DashboardComponent, LandingPageComponent, MuseumCardComponent, FooterComponent],
   imports: [
     BrowserModule,
     FormsModule,
