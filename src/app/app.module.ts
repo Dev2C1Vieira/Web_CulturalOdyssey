@@ -19,7 +19,8 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CategoryPageComponent } from './components/category-page/category-page.component';
+import { WineCategoryComponent } from './components/category-page/wine-category/wine-category.component';
+import { VinhoDoPortoComponent } from './components/museums/wines/vinho-do-porto/vinho-do-porto.component';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +29,7 @@ import { MuseumCardComponent } from './components/museum-card/museum-card.compon
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, DashboardComponent, LandingPageComponent, FooterComponent, MuseumCardComponent, CategoryPageComponent, FooterComponent ],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, DashboardComponent, LandingPageComponent, FooterComponent, MuseumCardComponent, WineCategoryComponent, FooterComponent, VinhoDoPortoComponent ],
   imports: [
     BrowserModule,
     FormsModule,
