@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    height: 100%;
+    gap: 20px; /* Adiciona espaço entre os containers */
+  }
+  
+  
+  .container_left, .container_right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%; /* Cada container ocupa metade da largura da página */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura total */
+  }
+  
+  .container_left {
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: flex-end; /* Alinha a imagem à direita horizontalmente */
+    margin: 20px 0; /* Remove a margem à esquerda */
+  }
+  
+  .container_left img {
+    width: 30rem;
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+  }
+  
+  .container_right {
+    justify-content: flex-start; /* Alinha o conteúdo ao topo, pode ser ajustado conforme necessidade */
+    margin: 20px 0; /* Remove a margem à esquerda */
+  }
+
+  .container_right h1 {
+    font-size: 2em;
+    font-family: "Roboto", sans-serif;
+    text-align: left; /* Centraliza o texto dentro do parágrafo */
+  }
+
+  .container_right h3 {
+    font-size: 1.2em;
+    font-family: "Roboto", sans-serif;
+    text-align: left; /* Centraliza o texto dentro do parágrafo */
+  }
+
+  .container_right hr {
+    width: 80%;
+    margin: 20px 0;
+    color: black;
+  }
+
+  .container_right p {
+    width: 80%;
+    font-size: 1em;
+    font-family: "Roboto", sans-serif;
+    text-align: left; /* Centraliza o texto dentro do parágrafo */
+    text-align: justify; /* Justifica o texto */
+  }
+  

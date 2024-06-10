@@ -4,14 +4,14 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 20rem;
-    height: 40rem;
+    height: 35rem;
     text-align: center;
     margin: 1em;
   }
   
   .museum-card img {
     width: 100%;
-    height: 30rem;
+    height: 25rem;
     object-fit: fill; /* Estica a imagem para preencher completamente a caixa */
   }
   
@@ -21,6 +21,7 @@
   
   .museum-info h2 {
     margin: 0.5em 0;
+    font-size: 1em;
   }
   
   .museum-info p {
