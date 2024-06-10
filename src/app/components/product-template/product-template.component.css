@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    height: 100%;
+    gap: 20px; /* Adiciona espaço entre os containers */
+  }
+  
+  .container_left, .container_right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%; /* Cada container ocupa metade da largura da página */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura total */
+  }
+  
+  .container_left {
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: flex-end; /* Alinha a imagem à direita horizontalmente */
+    margin: 20px 0; /* Remove a margem à esquerda */
+  }
+  
+  .container_left img {
+    width: 30rem;
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+  }
+  
+  .container_right {
+    justify-content: flex-start; /* Alinha o conteúdo ao topo, pode ser ajustado conforme necessidade */
+    margin: 20px 0; /* Remove a margem à esquerda */
+  }
+  
+  .container_right h1 {
+    font-size: 2em;
+    font-family: "Roboto", sans-serif;
+    text-align: left; /* Centraliza o texto dentro do parágrafo */
+  }
+  
+  .container_right h3 {
+    font-size: 1em;
+    font-family: "Roboto", sans-serif;
+    text-align: left; /* Centraliza o texto dentro do parágrafo */
+    margin-bottom: 5px; /* Reduz a margem inferior para diminuir o espaçamento abaixo do título */
+    margin-top: 20px; /* Adiciona margem superior para espaçamento entre o título e o parágrafo anterior */
+  }
+  
+  .container_right hr {
+    width: 80%;
+    margin: 20px 0;
+    color: black;
+  }
+  
+  .container_right p {
+    width: 80%;
+    font-size: 1em;
+    font-family: "Roboto", sans-serif;
+    text-align: left; /* Centraliza o texto dentro do parágrafo */
+    text-align: justify; /* Justifica o texto */
+    margin-top: 5px; /* Reduz a margem superior para diminuir o espaçamento acima do parágrafo */
+    margin-bottom: 15px; /* Ajusta a margem inferior conforme necessário */
+    border: 2px solid #6d675d; /* Adiciona uma borda ao redor do parágrafo */
+    padding: 10px; /* Adiciona espaço entre o texto e a borda */
+    border-radius: 5px; /* Opcional: arredonda os cantos do retângulo */
+    background-color: #f9f9f9; /* Opcional: adiciona um fundo ao parágrafo */
+  }
+  
+  .enfase {
+    color: #6d675d;
+    font-size: 0.9em;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+  }
+  
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Alinha os itens à esquerda e à direita */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 10px 20px; /* Adiciona espaço interno ao redor dos itens */
+    height: 4rem;
+    background-color: #6d675d; /* Define a cor de fundo da barra de navegação */
+    color: #6d675d; /* Define a cor do texto */
+  }
+  
+  .img-box {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    background-color: #f5f5f5;
+  }
+  
+  .navbar img {
+    width: 100px;
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+    padding: 10px;
+  }
+  
