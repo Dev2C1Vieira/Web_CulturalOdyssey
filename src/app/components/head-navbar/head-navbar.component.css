@@ -1,0 +1,77 @@
+.headbar {
+  position: relative; /* Adicionado */
+  height: 50px;
+  background-color: #6d675d;
+  display: flex;
+  justify-content: flex-end; /* Alinhado à direita */
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 0 10px #28261d;
+}
+
+.settings-menu {
+  position: absolute;
+  right: 0;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  width: 10rem;
+  background-color: #6d675d;
+  padding: 20px;
+  z-index: 5;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  position: relative; /* Added */
+}
+
+.user-info:hover {
+  cursor: pointer;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px; /* Moved to the right */
+}
+
+.user-name {
+  font-size: 16px;
+  color: white;
+  margin-right: 5px; /* Moved to the right */
+}
+
+.settings-icon {
+  margin-right: 10px; /* Spacing between the image and the settings icon */
+  color: white; /* Setting the color of the icon */
+  cursor: pointer; /* Added */
+}
+
+.settings-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.settings-menu ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.settings-icon:focus + .settings-menu {
+  display: block;
+}
+
+.settings-menu ul li:not(:first-child) {
+  margin-top: 20px;
+}
+
+.settings-menu ul li:hover {
+  transform: scale(1.1);
+}
+
+li {
+  text-align: center;
+}

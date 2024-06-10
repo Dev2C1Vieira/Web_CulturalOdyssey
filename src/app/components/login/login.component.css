@@ -23,12 +23,12 @@
 }
 
 .login-form h2 {
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .form-group {
-  margin-bottom: 20px; 
-  text-align: left; 
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 label {
@@ -44,9 +44,8 @@ input {
   border-radius: 4px;
 }
 
-
 input:hover {
-  border-color: #28261d; 
+  border-color: #28261d;
 }
 
 input:active {
@@ -66,7 +65,7 @@ button {
   color: white;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 button:hover {

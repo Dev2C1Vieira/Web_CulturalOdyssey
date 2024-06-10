@@ -1,0 +1,108 @@
+.form-wrapper {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 70%;
+    margin: 20px auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 200px;
+    resize: vertical;
+  }
+  
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 30px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-group label {
+    margin-right: 10px;
+  }
+  
+  .button {
+    background-color: #6d675d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #28261d;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+  
+  .grid-container > div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grid-container label {
+    margin-bottom: 5px;
+  }
+  
+  .space-top {
+    margin-top: 20px;
+  }
+  
+  .submit-button {
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+  }
+  
+  .visiting-hours-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .visiting-hour-pair {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .visiting-hour {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .visiting-hour:last-child {
+    margin-right: 0;
+  }
+  
+  .visiting-hour label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
