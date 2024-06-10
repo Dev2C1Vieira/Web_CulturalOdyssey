@@ -72,6 +72,35 @@ export class AuthService {
     }
   }
 
+  async loginWithEmailPassword(email: string, password: string) {
+    try {
+      const credential = await this.auth.signInWithEmailAndPassword(
+        email,
+        password
+      );
+      const user = credential.user;
+
+      if (user) {
+        const userDoc = await this.firestore
+          .collection('users')
+          .doc(user.uid)
+          .get()
+          .toPromise();
+        const isAdmin = userDoc?.get('isAdmin');
+
+        if (isAdmin) {
+          this.router.navigate(['/dashboard']);
+        } else {
+          this.toastr.success('Login successful!');
+          this.router.navigate(['/']);
+        }
+      }
+    } catch (error) {
+      console.error('Error during email/password authentication:', error);
+      // You can handle error messages here and show them to the user using ToastrService or any other method
+    }
+  }
+
   private async saveUserData(user: firebase.User, isGoogleAuth: boolean) {
     try {
       let userData: any = {

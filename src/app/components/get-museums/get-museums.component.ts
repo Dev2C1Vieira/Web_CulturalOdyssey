@@ -65,7 +65,7 @@ export class GetMuseumsComponent implements AfterViewInit {
   }
 
   redirectToDetailsPage(uuid: string) {
-    console.log(uuid);
+    this.router.navigate(['museum', uuid]);
   }
 
   createEvent(id: string) {

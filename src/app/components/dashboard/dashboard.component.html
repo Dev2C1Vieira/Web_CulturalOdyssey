@@ -7,119 +7,122 @@
   class="content-wrapper"
   [ngStyle]="{ 'margin-left': sidebarExpanded ? '250px' : '150px' }"
 >
- 
-    <div class="form-wrapper" *ngIf="isNewUser">
-      <ng-container>
-        <div *ngIf="!isGoogleProvider">
-          <h1>Vamos precisar de alguns dados!</h1>
-          <form (submit)="onSubmit()">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Nome"
-              required
-              [(ngModel)]="displayName"
-            /><br />
+  <div class="form-wrapper" *ngIf="isNewUser">
+    <ng-container>
+      <div *ngIf="!isGoogleProvider">
+        <h1>Vamos precisar de alguns dados!</h1>
+        <form (submit)="onSubmit()">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Nome"
+            required
+            [(ngModel)]="displayName"
+          /><br />
 
-            <input
-              type="text"
-              id="photoUrl"
-              name="photoUrl"
-              placeholder="Photo URL"
-              required
-              [(ngModel)]="photoURL"
-            /><br />
+          <input
+            type="text"
+            id="photoUrl"
+            name="photoUrl"
+            placeholder="Photo URL"
+            required
+            [(ngModel)]="photoURL"
+          /><br />
 
-            <input
-              type="date"
-              id="birthdate"
-              name="birthdate"
-              required
-              [(ngModel)]="birthdate"
-            /><br />
+          <input
+            type="date"
+            id="birthdate"
+            name="birthdate"
+            required
+            [(ngModel)]="birthdate"
+          /><br />
 
-            <input
-              type="text"
-              id="location"
-              name="location"
-              placeholder="Localidade"
-              required
-              [(ngModel)]="location"
-            /><br />
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Localidade"
+            required
+            [(ngModel)]="location"
+          /><br />
 
-            <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              placeholder="Número de Telefone"
-              required
-              [(ngModel)]="phoneNumber"
-            /><br />
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            placeholder="Número de Telefone"
+            required
+            [(ngModel)]="phoneNumber"
+          /><br />
 
-            <button type="submit">Enviar</button>
-          </form>
-        </div>
-        <div *ngIf="isGoogleProvider">
-          <h2>Vamos precisar de alguns dados!</h2>
-          <form (submit)="onSubmit()">
-            <input
-              type="date"
-              id="birthdate"
-              name="birthdate"
-              required
-              [(ngModel)]="birthdate"
-            /><br />
-
-            <input
-              type="text"
-              id="location"
-              name="location"
-              placeholder="Localidade"
-              required
-              [(ngModel)]="location"
-            /><br />
-
-            <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              placeholder="Número de Telefone"
-              required
-              [(ngModel)]="phoneNumber"
-            /><br />
-
-            <button type="submit">Enviar</button>
-          </form>
-        </div>
-      </ng-container>
-    </div>
-
-    <div class="text-wrapper" *ngIf="isNewUser">
-      <h2>HELLOOO</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar
-        velit id quam convallis, eget tristique dui mattis. Vestibulum eu dui
-        nec est commodo blandit. Nulla facilisi. Integer vitae mauris eu dolor
-        lobortis sagittis. Nulla vel dui a neque lacinia tincidunt. Integer
-        hendrerit eros nec orci scelerisque, et suscipit lectus volutpat. Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar velit id
-        quam convallis, eget tristique dui mattis. Vestibulum eu dui nec est
-        commodo blandit. Nulla facilisi. Integer vitae mauris eu dolor lobortis
-        sagittis. Nulla vel dui a neque lacinia tincidunt. Integer hendrerit
-        eros nec orci scelerisque, et suscipit lectus volutpat. Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit. Sed pulvinar velit id quam
-        convallis, eget tristique dui mattis. Vestibulum eu dui nec est commodo
-        blandit. Nulla facilisi. Integer vitae mauris eu dolor lobortis
-        sagittis. Nulla vel dui a neque lacinia tincidunt. Integer hendrerit
-        eros nec orci scelerisque, et suscipit lectus volutpat.
-      </p>
-    </div>
-
-    <div class="text-wrapper" *ngIf="!isNewUser">
-        <h1>HELLOOOo</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar velit id quam convallis, eget tristique dui mattis. Vestibulum eu dui nec est commodo blandit. Nulla facilisi. Integer vitae mauris eu dolor lobortis sagittis. Nulla vel dui a neque lacinia tincidunt. Integer hendrerit eros nec orci scelerisque, et suscipit lectus volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar velit id quam convallis, eget tristique dui mattis. Vestibulum eu dui nec est commodo blandit. Nulla facilisi. Integer vitae mauris eu dolor lobortis sagittis. Nulla vel dui a neque lacinia tincidunt. Integer hendrerit eros nec orci scelerisque, et suscipit lectus volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar velit id quam convallis, eget tristique dui mattis. Vestibulum eu dui nec est commodo blandit. Nulla facilisi. Integer vitae mauris eu dolor lobortis sagittis. Nulla vel dui a neque lacinia tincidunt. Integer hendrerit eros nec orci scelerisque, et suscipit lectus volutpat.
-        </p>
+          <button type="submit">Enviar</button>
+        </form>
       </div>
+      <div *ngIf="isGoogleProvider">
+        <h2>Vamos precisar de alguns dados!</h2>
+        <form (submit)="onSubmit()">
+          <input
+            type="date"
+            id="birthdate"
+            name="birthdate"
+            required
+            [(ngModel)]="birthdate"
+          /><br />
+
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Localidade"
+            required
+            [(ngModel)]="location"
+          /><br />
+
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            placeholder="Número de Telefone"
+            required
+            [(ngModel)]="phoneNumber"
+          /><br />
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="text-wrapper" *ngIf="isNewUser">
+    <h2>Web Cultural Odyssey</h2>
+    <p>
+      Welcome to Musean Dashboard! Your one-stop platform for managing and
+      showcasing museums online. Musean Dashboard is the ideal tool for museums,
+      cultural centers, and art institutions of all sizes. It streamlines the
+      process of adding virtual museums, events, and collection data directly to
+      your website. With Musean Dashboard, you can easily create immersive and
+      engaging virtual tours, allowing your audience to explore your exhibitions
+      from anywhere in the world. Manage your events seamlessly, announce
+      upcoming events, update information, and sell tickets directly through
+      your dashboard. Additionally, centralize all of your museum data, keeping
+      artwork, collections, and exhibitions organized and accessible.
+    </p>
+  </div>
+
+  <div class="text-wrapper" *ngIf="!isNewUser">
+    <h1>Web Cultural Odyssey</h1>
+    <p>
+      Welcome to Musean Dashboard! Your one-stop platform for managing and
+      showcasing museums online. Musean Dashboard is the ideal tool for museums,
+      cultural centers, and art institutions of all sizes. It streamlines the
+      process of adding virtual museums, events, and collection data directly to
+      your website. With Musean Dashboard, you can easily create immersive and
+      engaging virtual tours, allowing your audience to explore your exhibitions
+      from anywhere in the world. Manage your events seamlessly, announce
+      upcoming events, update information, and sell tickets directly through
+      your dashboard. Additionally, centralize all of your museum data, keeping
+      artwork, collections, and exhibitions organized and accessible.
+    </p>
+  </div>
 </div>

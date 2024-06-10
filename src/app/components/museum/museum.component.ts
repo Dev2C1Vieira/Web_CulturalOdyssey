@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MuseumService } from '../../services/museum/museum.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-museum',
@@ -14,13 +15,14 @@ export class MuseumComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private museumService: MuseumService
+    private museumService: MuseumService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
     if (this.id === 'clear') {
-      console.log('try again');
+      this.toastr.error('Failed show the museum. Please try again.');
       return;
     }
 
@@ -32,7 +34,7 @@ export class MuseumComponent implements OnInit {
     try {
       this.museum = await this.museumService.getMuseumData(this.id);
     } catch (error) {
-      // Handle error
+      this.toastr.error('Failed show the museum. Please try again.');
     }
   }
 
@@ -43,7 +45,7 @@ export class MuseumComponent implements OnInit {
         console.log(`Test ${this.arts}`);
       });
     } catch (error) {
-      // Handle error
+      this.toastr.error('Failed show the museum. Please try again.');
     }
   }
 }

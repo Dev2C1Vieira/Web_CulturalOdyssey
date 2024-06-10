@@ -1,5 +1,5 @@
+import { AuthService } from './../../services/auth/auth.service';
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,5 +18,9 @@ export class LoginComponent {
 
   navigateToRegister() {
     this.router.navigate(['/register']);
+  }
+
+  login() {
+    this.authService.loginWithEmailPassword(this.email, this.password);
   }
 }

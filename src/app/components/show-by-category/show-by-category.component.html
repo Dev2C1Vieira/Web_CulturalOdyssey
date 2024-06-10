@@ -1,22 +1,26 @@
 <header>
-  <p class="p_header_title">Aprender sobre...</p>
-  <p class="p_header_subtitle">Escolha entre uma mistura cultural</p>
+    <p class="p_header_title">Aprender sobre...</p>
+    <p class="p_header_subtitle">Escolha entre uma mistura cultural</p>
 </header>
 <main>
-  <section class="categories">
-    <p>Tudo o que ha para saber sobre os vinhos nacionais!</p>
-    <br /><br />
-
-    <div *ngFor="let museum of museums">
-      <app-card
-        [image]="museum.imageLink"
-        [name]="museum.name"
-        [address]="museum.address"
-        [signal]="false"
-        [category]="museum.category"
-        [museumId]="museum.id"
-      >
-      </app-card>
-    </div>
-  </section>
+    <section class="categories">
+        <ng-container *ngIf="museums && museums.length > 0; else noMuseums">
+            <p>Tudo o que há para saber!</p>
+            <br /><br />
+            <div *ngFor="let museum of museums">
+                <app-card
+                    [image]="museum.imageLink"
+                    [name]="museum.name"
+                    [address]="museum.address"
+                    [signal]="false"
+                    [category]="museum.category"
+                    [museumId]="museum.id"
+                >
+                </app-card>
+            </div>
+        </ng-container>
+        <ng-template #noMuseums>
+            <p>De momento, nao existem museus disponiveis!</p>
+        </ng-template>
+    </section>
 </main>
