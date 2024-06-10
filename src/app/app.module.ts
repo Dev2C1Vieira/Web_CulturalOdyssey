@@ -41,6 +41,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { BlackettVintageComponent } from './components/product/wines/vinho-do-porto/blackett-vintage/blackett-vintage.component';
 import { ProductTemplateComponent } from './components/product-template/product-template.component';
 import { MuseumTemplateComponent } from './components/museum-template/museum-template.component';
+import { FrontNavbarComponent } from './components/front-navbar/front-navbar.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { MuseumTemplateComponent } from './components/museum-template/museum-tem
     BlackettVintageComponent,
     ProductTemplateComponent,
     MuseumTemplateComponent,
+    FrontNavbarComponent,
   ],
   imports: [
     BrowserModule,

@@ -69,27 +69,3 @@
     font-weight: bold;
   }
   
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between; /* Alinha os itens à esquerda e à direita */
-    align-items: center; /* Centraliza verticalmente */
-    padding: 10px 20px; /* Adiciona espaço interno ao redor dos itens */
-    height: 4rem;
-    background-color: #6d675d; /* Define a cor de fundo da barra de navegação */
-    color: #6d675d; /* Define a cor do texto */
-  }
-  
-  .img-box {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    background-color: #f5f5f5;
-  }
-  
-  .navbar img {
-    width: 100px;
-    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
-    padding: 10px;
-  }
-  

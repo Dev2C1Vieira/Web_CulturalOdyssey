@@ -1,0 +1,21 @@
+<section class="navbar">
+    <a href=""><img [src]="logoUrl" alt="WebCultural Odyssey"></a>
+    <div class="nav-links">
+      <!-- Outros links de navegação podem ser adicionados aqui -->
+    </div>
+    <div *ngIf="isLoggedIn" class="user-info" (click)="toggleDropdown()">
+      <img [src]="userImageUrl" alt="Profile Picture" class="profile-picture" />
+      <span class="user-name">{{ userName }}</span>
+      <i class="fas" [ngClass]="{'fa-chevron-up': showDropdown, 'fa-chevron-down': !showDropdown}"></i>
+      <div class="settings-menu" *ngIf="showDropdown">
+        <ul>
+          <li (click)="navigateToSettings()"><i class="fas fa-cog"></i> Settings</li>
+          <li (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</li>
+        </ul>
+      </div>
+    </div>
+    <div *ngIf="!isLoggedIn" class="auth-links">
+      <span (click)="login()">Login</span> | <span (click)="register()">Register</span>
+    </div>
+  </section>
+  
