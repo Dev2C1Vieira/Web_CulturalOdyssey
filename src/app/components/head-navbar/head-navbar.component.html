@@ -1,0 +1,23 @@
+<div class="headbar">
+  <div class="user-info" (click)="toggleSettingsMenu()">
+    <img [src]="userImageUrl" alt="Foto de perfil" class="profile-picture" />
+    <span class="user-name">{{ userName }}</span>
+    <div class="settings-icon">
+      <i class="{{ iconDrop }}"></i>
+    </div>
+  </div>
+</div>
+<div class="settings-menu" *ngIf="showSettingsMenu">
+  <ul>
+    <li>
+      <a href="javascript:void(0)" (click)="logout()"
+        ><i class="fas fa-cog"></i> Settings</a
+      >
+    </li>
+    <li>
+      <a href="javascript:void(0)" (click)="logout()"
+        ><i class="fas fa-sign-out-alt"></i> Logout</a
+      >
+    </li>
+  </ul>
+</div>

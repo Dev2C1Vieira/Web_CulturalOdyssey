@@ -1,0 +1,201 @@
+<app-side-navbar
+  [isExpanded]="sidebarExpanded"
+  (toggleSidebar)="sidebarExpanded = !sidebarExpanded"
+></app-side-navbar>
+
+<div
+  class="content-wrapper"
+  [ngStyle]="{ 'margin-left': sidebarExpanded ? '250px' : '150px' }"
+>
+  <!-- Change title based on museum creation status -->
+  <h2>{{ museumCreated ? "Add some arts" : "Create a museum!" }}</h2>
+
+  <!-- Form for creating museum -->
+  <form class="form-wrapper" *ngIf="!museumCreated">
+    <div class="form-group">
+      <label for="name">Museum name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="museum.name" />
+    </div>
+    <div class="form-group">
+      <label for="about">About:</label>
+      <textarea
+        id="about"
+        name="about"
+        rows="4"
+        cols="50"
+        [(ngModel)]="museum.about"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input
+        type="text"
+        id="address"
+        name="address"
+        [(ngModel)]="museum.address"
+      />
+    </div>
+    <div class="form-group">
+      <label for="imageLink">Image Link:</label>
+      <input
+        type="text"
+        id="imageLink"
+        name="imageLink"
+        [(ngModel)]="museum.imageLink"
+      />
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select id="category" name="category" [(ngModel)]="museum.category">
+        <option *ngFor="let category of categories" [value]="category.category">
+          {{ category.category }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <div class="grid-container">
+        <div>
+          <label for="latitude">Latitude:</label>
+          <input
+            type="text"
+            id="latitude"
+            name="latitude"
+            [(ngModel)]="latitude"
+          />
+        </div>
+        <div>
+          <label for="longitude">Longitude:</label>
+          <input
+            type="text"
+            id="longitude"
+            name="longitude"
+            [(ngModel)]="longitude"
+          />
+        </div>
+      </div>
+    </div>
+
+    <label *ngIf="museum.visitingHours && museum.visitingHours.length > 0"
+      >Visiting hours:</label
+    >
+
+    <div
+      class="form-group"
+      *ngFor="let visitingHour of museum.visitingHours; let i = index"
+    >
+      <div class="visiting-hour-pair">
+        <label for="visitingHour{{ i }}">{{ visitingHour.value }}</label>
+        <button class="delete-icon" (click)="removeVisitingHour(i)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="defaultVisitingHour">Visiting Hour:</label>
+      <input
+        type="text"
+        id="defaultVisitingHour"
+        name="defaultVisitingHour"
+        class="visiting-hours"
+        [(ngModel)]="defaultVisitingHour"
+      />
+    </div>
+    <!-- Botão para adicionar nova hora de visita -->
+    <div class="form-group">
+      <button
+        class="space-top button"
+        type="button"
+        (click)="addVisitingHour()"
+      >
+        Add Visiting Hour
+      </button>
+    </div>
+    <!-- Botão de envio do formulário -->
+    <button type="submit" (click)="createMuseum()" class="submit-button button">
+      Crete Museum
+    </button>
+  </form>
+
+  <!-- Form for adding art pieces -->
+  <form class="form-wrapper" *ngIf="museumCreated">
+    <div class="form-group">
+      <label for="artAuthor">Author:</label>
+      <input
+        type="text"
+        id="artAuthor"
+        name="artAuthor"
+        [(ngModel)]="defaultArt.author"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="artName">Art name:</label>
+      <input
+        type="text"
+        id="artName"
+        name="artName"
+        [(ngModel)]="defaultArt.artName"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Art Description:</label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="defaultArt.description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="artCategory">Category:</label>
+      <select
+        id="artCategory"
+        name="artCategory"
+        [(ngModel)]="defaultArt.category"
+      >
+        <option *ngFor="let category of categories" [value]="category.category">
+          {{ category.category }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="artDate">Date:</label>
+      <input
+        type="date"
+        id="artDate"
+        name="artDate"
+        [(ngModel)]="defaultArt.date"
+      />
+    </div>
+    <div class="form-group">
+      <label for="artImageLink">Image Link:</label>
+      <input
+        type="text"
+        id="artImageLink"
+        name="artImageLink"
+        [(ngModel)]="defaultArt.imageLink"
+      />
+    </div>
+    <div class="form-group">
+      <button class="space-top button" type="button" (click)="addArt()">
+        Add Art
+      </button>
+    </div>
+
+    <label *ngIf="arts && arts.length > 0">Art Pieces:</label>
+    <div class="form-group" *ngFor="let art of arts; let i = index">
+      <div class="art-piece">
+        <p>{{ art.author }} - {{ art.category }} - {{ art.date }}</p>
+        <img [src]="art.imageLink" alt="Art image" width="100" height="100" />
+        <button class="delete-icon" (click)="removeArt(i)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+    </div>
+    <button type="submit" (click)="addArts()" class="submit-button button">
+      Add Arts
+    </button>
+  </form>
+</div>

@@ -1,0 +1,60 @@
+.table-format {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.center-table {
+  width: 90rem;
+  margin-top: 50px;
+  box-shadow: 0 0 10px #28261d;
+}
+
+.input-wrapper {
+  position: fixed;
+}
+
+.input-wrapper input[type="text"] {
+  padding-right: 30px; /* Adjust as needed */
+}
+
+.input-wrapper .fa-search {
+  position: absolute;
+  right: 10px; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* CSS for the zoom icon */
+.fa-search {
+  color: #aaa; /* Adjust the color as needed */
+}
+
+.fa-search:hover {
+  color: #333; /* Adjust the hover color as needed */
+}
+
+input {
+  height: 30px;
+}
+
+.small-image {
+  max-width: 100px; /* Adjust the maximum width as needed */
+  max-height: 100px; /* Adjust the maximum height as needed */
+}
+
+.small-image:hover {
+  cursor: zoom-in;
+}
+
+i {
+  color: #6d675d;
+}
+
+i:hover {
+  color: #28261d;
+  cursor: pointer;
+}
+
+
