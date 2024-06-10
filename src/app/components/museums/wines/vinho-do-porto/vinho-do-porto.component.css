@@ -46,6 +46,22 @@ header {
     text-align: -webkit-center; /* Compatibilidade com navegadores WebKit */
 }
 
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    padding: 3em;
+    background-color: #fff;
+  }
+
+  .products p {
+    width: 100%;
+    font-size: 2em;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+  }
+
 .info-section {
     display: flex;
     flex-direction: column; /* Orientação vertical */
