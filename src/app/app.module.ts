@@ -43,6 +43,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 
 import { ArtComponent } from './components/art/art.component';
 import { FrontNavbarComponent } from './components/front-navbar/front-navbar.component';
+import { AudioComponent } from './components/audio/audio.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { FrontNavbarComponent } from './components/front-navbar/front-navbar.com
     ProductCardComponent,
     ArtComponent,
     FrontNavbarComponent,
+    AudioComponent,
   ],
   imports: [
     BrowserModule,

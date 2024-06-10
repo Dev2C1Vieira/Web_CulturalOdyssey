@@ -23,4 +23,8 @@ export class LoginComponent {
   login() {
     this.authService.loginWithEmailPassword(this.email, this.password);
   }
+
+  goToMain() {
+    this.router.navigate(['/']);
+  }
 }

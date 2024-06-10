@@ -5,7 +5,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 @Component({
   selector: 'app-front-navbar',
   templateUrl: './front-navbar.component.html',
-  styleUrls: ['./front-navbar.component.css']
+  styleUrls: ['./front-navbar.component.css'],
 })
 export class FrontNavbarComponent implements OnInit {
   logoUrl: string = '../../../assets/logo/logo-branco.png';
@@ -17,10 +17,10 @@ export class FrontNavbarComponent implements OnInit {
   constructor(private router: Router, private auth: AngularFireAuth) {}
 
   ngOnInit(): void {
-    this.auth.onAuthStateChanged(user => {
+    this.auth.onAuthStateChanged((user) => {
       this.isLoggedIn = !!user;
       if (user) {
-        this.userName = user.displayName || 'Usuário';
+        this.userName = user.displayName || 'John Doe';
         this.userImageUrl = user.photoURL || 'https://via.placeholder.com/40';
       }
     });
@@ -48,5 +48,9 @@ export class FrontNavbarComponent implements OnInit {
 
   register() {
     this.router.navigate(['/register']);
+  }
+
+  backPage() {
+    window.history.back();
   }
 }
