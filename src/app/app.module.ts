@@ -42,6 +42,7 @@ import { MuseumComponent } from './components/museum/museum.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 
 import { ArtComponent } from './components/art/art.component';
+import { FrontNavbarComponent } from './components/front-navbar/front-navbar.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { ArtComponent } from './components/art/art.component';
     MuseumComponent,
     ProductCardComponent,
     ArtComponent,
+    FrontNavbarComponent,
   ],
   imports: [
     BrowserModule,
