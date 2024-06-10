@@ -44,6 +44,18 @@
         [(ngModel)]="museum.imageLink"
       />
     </div>
+
+    <div class="form-group">
+        <label for="ticketShop">Ticket shop:</label>
+        <input
+          type="text"
+          id="ticketShop"
+          name="ticketShop"
+          [(ngModel)]="museum.ticketShop"
+        />
+      </div>
+
+
     <div class="form-group">
       <label for="category">Category:</label>
       <select id="category" name="category" [(ngModel)]="museum.category">

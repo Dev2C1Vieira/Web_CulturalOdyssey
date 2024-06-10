@@ -15,9 +15,7 @@
     object-fit: fill; /* Estica a imagem para preencher completamente a caixa */
   }
   
-  .museum-info {
-    padding: 1em;
-  }
+
   
   .museum-info h2 {
     margin: 0.5em 0;

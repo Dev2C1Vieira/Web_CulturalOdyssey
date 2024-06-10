@@ -1,12 +1,16 @@
 <section class="top_container">
-  <img [src]="museum.imageLink" alt="Museu do Vinho do Porto" />
+  <img
+    [src]="museum.imageLink"
+    alt="Museu do Vinho do Porto"
+    class="img-size"
+  />
   <p class="top_container_title">{{ museum.name }}</p>
 </section>
 <section class="center_container">
   <p class="center_container_text">{{ museum.about }}</p>
 </section>
 <section class="products">
-  <p>Conhece um bocado sobre nos</p>
+  <p>Conhece a nossa arte</p>
   <br /><br />
 
   <div *ngFor="let art of arts">
@@ -29,9 +33,7 @@
       <h2>BILHETES</h2>
       <p>BILHETEIRA ONLINE</p>
       <button class="museum-info-button">
-        <a
-          class="museum-info-a"
-          href="https://www.bol.pt/Comprar/Bilhetes/117308-visita_extensao_do_douro-extensao_do_douro/"
+        <a class="museum-info-a" [href]="museum.ticketShop"
           >Adquirir blhete(s)</a
         >
       </button>

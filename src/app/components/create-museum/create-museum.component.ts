@@ -23,6 +23,7 @@ interface Museum {
   address: string;
   imageLink: string;
   category: string;
+  ticketShop: string;
   visitingHours: VisitingHour[];
   map?: [number, number];
 }
@@ -48,6 +49,7 @@ export class CreateMuseumComponent implements OnInit {
     address: '',
     imageLink: '',
     category: '',
+    ticketShop: '',
     visitingHours: [],
   };
 
@@ -186,6 +188,7 @@ export class CreateMuseumComponent implements OnInit {
       'about',
       'address',
       'imageLink',
+      'ticketShop',
       'category',
       'latitude',
       'longitude',
@@ -227,7 +230,9 @@ export class CreateMuseumComponent implements OnInit {
       address: '',
       imageLink: '',
       category: '',
+      ticketShop: '',
       visitingHours: [],
+      map: [0, 0],
     };
     this.arts = [];
     this.latitude = '';
