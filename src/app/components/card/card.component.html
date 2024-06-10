@@ -1,0 +1,9 @@
+<div class="card">
+    <img [src]="image" [alt]="name" />
+    <div class="museum-info">
+      <h2>{{ name }}</h2>
+      <p *ngIf="address">{{ address }}</p>
+      <button (click)="navigate()"><a>Explorar</a></button>
+    </div>
+  </div>
+  

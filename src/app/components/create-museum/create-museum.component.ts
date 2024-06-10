@@ -200,6 +200,8 @@ export class CreateMuseumComponent implements OnInit {
       return;
     }
 
+    this.museum.map = [lat, lng];
+
     this.museum.visitingHours = this.museum.visitingHours.map(
       (time: any) => time.value
     );

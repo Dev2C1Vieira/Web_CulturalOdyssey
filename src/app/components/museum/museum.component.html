@@ -1,0 +1,79 @@
+<section class="top_container">
+  <img [src]="museum.imageLink" alt="Museu do Vinho do Porto" />
+  <p class="top_container_title">{{ museum.name }}</p>
+</section>
+<section class="center_container">
+  <p class="center_container_text">{{ museum.about }}</p>
+</section>
+<section class="products">
+  <p>Conhece um bocado sobre nos</p>
+  <br /><br />
+  <app-product-card
+    image="../../../assets/products/wines/museum/blackett-vintage-2013.jpg"
+    name="Blackett Vintage 2013"
+    product_name="BLACKETT VINTAGE 2013"
+    path="/wine-category-museum/museu-museum/blackett-vintage"
+  >
+  </app-product-card>
+  <app-product-card
+    image="../../../assets/products/wines/museum/meandro-finest-reserve-ruby.jpg"
+    name="Meandro Finest Reserva Ruby"
+    product_name="MEANDRO FINEST RESERVA RUBY"
+    path="/wine-category-museum/museu-museum"
+  >
+  </app-product-card>
+  <app-product-card
+    image="../../../assets/products/wines/museum/maynards-pink-50cl.jpg"
+    name="Maynard's Pink Port 50cl"
+    product_name="MAYNARDS PINK PORT 50CL"
+    path="/wine-category-museum/museu-museum"
+  >
+  </app-product-card>
+</section>
+<section class="center_container">
+  <section class="info-section">
+    <div class="info-card">
+      <h2>BILHETES</h2>
+      <p>BILHETEIRA ONLINE</p>
+      <button class="museum-info-button">
+        <a
+          class="museum-info-a"
+          href="https://www.bol.pt/Comprar/Bilhetes/117308-visita_extensao_do_douro-extensao_do_douro/"
+          >Adquirir blhete(s)</a
+        >
+      </button>
+    </div>
+    <div class="info-card">
+      <h2>HORÁRIO</h2>
+      <p>
+        <span *ngFor="let hour of museum.visitingHours">
+          {{ hour }}<br />
+        </span>
+      </p>
+    </div>
+    <div class="info-card">
+      <h2>ENDEREÇO</h2>
+      <p>
+        {{ museum.address }}<br /><a
+          class="info-card-a"
+          [href]="goto"
+          target="_blank"
+        >
+          Direções
+        </a>
+        >
+      </p>
+    </div>
+  </section>
+</section>
+<section class="bottom_container">
+  <section class="map-section">
+    <section class="info-card-bottom-container">
+      <h2>Localização</h2>
+      <div class="map-container">
+       
+
+      </div>
+    </section>
+  </section>
+</section>

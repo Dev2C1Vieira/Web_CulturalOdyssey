@@ -7,14 +7,12 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
-
 import { CreateMuseumComponent } from './components/create-museum/create-museum.component';
 import { GetMuseumsComponent } from './components/get-museums/get-museums.component';
 import { CreateEventComponent } from './components/create-event/create-event.component';
-import { WineCategoryComponent } from './components/category-page/wine-category/wine-category.component';
-import { VinhoDoPortoComponent } from './components/museums/wines/vinho-do-porto/vinho-do-porto.component';
-import { BlackettVintageComponent } from './components/product/wines/vinho-do-porto/blackett-vintage/blackett-vintage.component';
-
+import { ShowByCategoryComponent } from './components/show-by-category/show-by-category.component';
+import { MuseumComponent } from './components/museum/museum.component';
+//import { BlackettVintageComponent } from './components/product/wines/museum/blackett-vintage/blackett-vintage.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -40,9 +38,9 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: '', component: LandingPageComponent },
-  { path: 'wine-category-museum', component: WineCategoryComponent },
-  { path: 'wine-category-museum/museu-vinho-do-porto', component: VinhoDoPortoComponent },
-  { path: 'wine-category-museum/museu-vinho-do-porto/blackett-vintage', component: BlackettVintageComponent },
+  { path: 'show-by-category/:category', component: ShowByCategoryComponent },
+  { path: 'museum/:id', component: MuseumComponent },
+  // { path: 'wine-category-museum/museu-museum/blackett-vintage', component: BlackettVintageComponent },
   { path: '**', redirectTo: '' },
 ];
 

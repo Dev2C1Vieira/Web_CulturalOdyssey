@@ -21,13 +21,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MuseumCardComponent } from './components/museum-card/museum-card.component';
+import { CardComponent } from './components/card/card.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
 import { HeadNavbarComponent } from './components/head-navbar/head-navbar.component';
 import { CreateMuseumComponent } from './components/create-museum/create-museum.component';
@@ -35,10 +36,11 @@ import { GetMuseumsComponent } from './components/get-museums/get-museums.compon
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ImageDialogComponent } from './components/image-dialog/image-dialog.component';
 import { CreateEventComponent } from './components/create-event/create-event.component';
-import { WineCategoryComponent } from './components/category-page/wine-category/wine-category.component';
-import { VinhoDoPortoComponent } from './components/museums/wines/vinho-do-porto/vinho-do-porto.component';
+import { ShowByCategoryComponent } from './components/show-by-category/show-by-category.component';
+
+import { MuseumComponent } from './components/museum/museum.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import { BlackettVintageComponent } from './components/product/wines/vinho-do-porto/blackett-vintage/blackett-vintage.component';
+//import { BlackettVintageComponent } from './components/product/wines/museum/blackett-vintage/blackett-vintage.component';
 import { ProductTemplateComponent } from './components/product-template/product-template.component';
 import { MuseumTemplateComponent } from './components/museum-template/museum-template.component';
 
@@ -50,17 +52,17 @@ import { MuseumTemplateComponent } from './components/museum-template/museum-tem
     DashboardComponent,
     LandingPageComponent,
     FooterComponent,
-    MuseumCardComponent,
+    CardComponent,
     SideNavbarComponent,
     HeadNavbarComponent,
     CreateMuseumComponent,
     GetMuseumsComponent,
     ImageDialogComponent,
     CreateEventComponent,
-    WineCategoryComponent,
-    VinhoDoPortoComponent,
+    ShowByCategoryComponent,
+    MuseumComponent,
     ProductCardComponent,
-    BlackettVintageComponent,
+    // BlackettVintageComponent,
     ProductTemplateComponent,
     MuseumTemplateComponent,
   ],
@@ -83,6 +85,7 @@ import { MuseumTemplateComponent } from './components/museum-template/museum-tem
       tapToDismiss: true,
       progressBar: true,
     }), // ToastrModule added
+    GoogleMapsModule,
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],
