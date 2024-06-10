@@ -4,13 +4,13 @@
   <p class="p_header_subtitle">Escolha entre uma mistura cultural</p>
 </header>
 <main>
-  <section class="categories">
+  <section class="categories section-container">
     <p>As diferentes categorias de museus que pode visitar</p>
-    <br /><br />
-
-    <div *ngFor="let category of categories">
-      <app-card [image]="category.imageLink" [name]="category.name" [category]="category.category" [signal]="true">
-      </app-card>
+    <div class="categories-grid">
+      <div *ngFor="let category of categories">
+        <app-card [image]="category.imageLink" [name]="category.name" [category]="category.category" [signal]="true">
+        </app-card>
+      </div>
     </div>
   </section>
 </main>
