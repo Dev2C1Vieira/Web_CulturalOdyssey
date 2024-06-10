@@ -7,21 +7,18 @@
     <section class="categories">
         <ng-container *ngIf="museums && museums.length > 0; else noMuseums">
             <p>Tudo o que há para saber!</p>
-            <br /><br />
+            <br><br>
             <div *ngFor="let museum of museums">
-                <app-card
-                    [image]="museum.imageLink"
-                    [name]="museum.name"
-                    [address]="museum.address"
-                    [signal]="false"
-                    [category]="museum.category"
-                    [museumId]="museum.id"
-                >
+                <app-card [image]="museum.imageLink" [name]="museum.name" [address]="museum.address" [signal]="false"
+                    [category]="museum.category" [museumId]="museum.id">
                 </app-card>
             </div>
         </ng-container>
         <ng-template #noMuseums>
-            <p>De momento, nao existem museus disponiveis!</p>
+            <div class="no-museums">
+                <img src="path/to/placeholder-image.jpg" alt="No Museums Available" />
+                <p>De momento, nao existem museus disponiveis!</p>
+            </div>
         </ng-template>
     </section>
 </main>
