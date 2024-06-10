@@ -40,9 +40,8 @@ import { ShowByCategoryComponent } from './components/show-by-category/show-by-c
 
 import { MuseumComponent } from './components/museum/museum.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-//import { BlackettVintageComponent } from './components/product/wines/museum/blackett-vintage/blackett-vintage.component';
-import { ProductTemplateComponent } from './components/product-template/product-template.component';
-import { MuseumTemplateComponent } from './components/museum-template/museum-template.component';
+
+import { ArtComponent } from './components/art/art.component';
 
 @NgModule({
   declarations: [
@@ -62,9 +61,7 @@ import { MuseumTemplateComponent } from './components/museum-template/museum-tem
     ShowByCategoryComponent,
     MuseumComponent,
     ProductCardComponent,
-    // BlackettVintageComponent,
-    ProductTemplateComponent,
-    MuseumTemplateComponent,
+    ArtComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,8 +81,7 @@ import { MuseumTemplateComponent } from './components/museum-template/museum-tem
       preventDuplicates: true,
       tapToDismiss: true,
       progressBar: true,
-    }), // ToastrModule added
-    GoogleMapsModule,
+    }),
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],

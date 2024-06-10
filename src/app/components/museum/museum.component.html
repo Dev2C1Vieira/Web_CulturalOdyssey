@@ -8,27 +8,20 @@
 <section class="products">
   <p>Conhece um bocado sobre nos</p>
   <br /><br />
-  <app-product-card
-    image="../../../assets/products/wines/museum/blackett-vintage-2013.jpg"
-    name="Blackett Vintage 2013"
-    product_name="BLACKETT VINTAGE 2013"
-    path="/wine-category-museum/museu-museum/blackett-vintage"
-  >
-  </app-product-card>
-  <app-product-card
-    image="../../../assets/products/wines/museum/meandro-finest-reserve-ruby.jpg"
-    name="Meandro Finest Reserva Ruby"
-    product_name="MEANDRO FINEST RESERVA RUBY"
-    path="/wine-category-museum/museu-museum"
-  >
-  </app-product-card>
-  <app-product-card
-    image="../../../assets/products/wines/museum/maynards-pink-50cl.jpg"
-    name="Maynard's Pink Port 50cl"
-    product_name="MAYNARDS PINK PORT 50CL"
-    path="/wine-category-museum/museu-museum"
-  >
-  </app-product-card>
+
+  <div *ngFor="let art of arts">
+    <app-product-card
+      [museumId]="art.museumId"
+      [artName]="art.artName"
+      [author]="art.author"
+      [category]="art.category"
+      [date]="art.date"
+      [description]="art.description"
+      [imageLink]="art.imageLink"
+      [artId]="art.id"
+    >
+    </app-product-card>
+  </div>
 </section>
 <section class="center_container">
   <section class="info-section">
@@ -53,16 +46,7 @@
     </div>
     <div class="info-card">
       <h2>ENDEREÇO</h2>
-      <p>
-        {{ museum.address }}<br /><a
-          class="info-card-a"
-          [href]="goto"
-          target="_blank"
-        >
-          Direções
-        </a>
-        >
-      </p>
+      <p>{{ museum.address }}<br /></p>
     </div>
   </section>
 </section>
@@ -70,10 +54,7 @@
   <section class="map-section">
     <section class="info-card-bottom-container">
       <h2>Localização</h2>
-      <div class="map-container">
-       
-
-      </div>
+      <div class="map-container"></div>
     </section>
   </section>
 </section>

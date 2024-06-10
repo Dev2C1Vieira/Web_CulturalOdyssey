@@ -1,7 +1,7 @@
 <div class="card">
-    <img [src]="image" [alt]="name">
+    <img [src]="imageLink" alt="Image">
     <div class="museum-info">
-        <h2>{{ product_name }}</h2>
-        <button><a [routerLink]="[path]">Saber mais</a></button>
+        <h2>{{ artName }}</h2>
+        <button (click)="showInfo()"><a >Saber mais</a></button>
     </div>
 </div>

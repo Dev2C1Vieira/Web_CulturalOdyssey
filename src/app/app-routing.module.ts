@@ -12,7 +12,7 @@ import { GetMuseumsComponent } from './components/get-museums/get-museums.compon
 import { CreateEventComponent } from './components/create-event/create-event.component';
 import { ShowByCategoryComponent } from './components/show-by-category/show-by-category.component';
 import { MuseumComponent } from './components/museum/museum.component';
-//import { BlackettVintageComponent } from './components/product/wines/museum/blackett-vintage/blackett-vintage.component';
+import { ArtComponent } from './components/art/art.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'show-by-category/:category', component: ShowByCategoryComponent },
   { path: 'museum/:id', component: MuseumComponent },
-  // { path: 'wine-category-museum/museu-museum/blackett-vintage', component: BlackettVintageComponent },
+  { path: 'show-art/:museumId/:id', component: ArtComponent },
   { path: '**', redirectTo: '' },
 ];
 

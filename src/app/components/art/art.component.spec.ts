@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MuseumTemplateComponent } from './museum-template.component';
+import { ArtComponent } from './art.component';
 
-describe('MuseumTemplateComponent', () => {
-  let component: MuseumTemplateComponent;
-  let fixture: ComponentFixture<MuseumTemplateComponent>;
+describe('ArtComponent', () => {
+  let component: ArtComponent;
+  let fixture: ComponentFixture<ArtComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MuseumTemplateComponent]
+      declarations: [ArtComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MuseumTemplateComponent);
+    fixture = TestBed.createComponent(ArtComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

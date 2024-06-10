@@ -1,57 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {
-  AngularFirestore,
-  DocumentSnapshot,
-} from '@angular/fire/compat/firestore';
-
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { MuseumService } from '../../services/museum/museum.service';
 
 @Component({
   selector: 'app-museum',
   templateUrl: './museum.component.html',
   styleUrls: ['./museum.component.css'],
 })
-export class MuseumComponent {
+export class MuseumComponent implements OnInit {
   id: string = 'clear';
   museum: any = {};
-  aboutText: string[] = [];
-  goto: string = '';
+  arts: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
-    private firestore: AngularFirestore,
-    public sanitizer: DomSanitizer // Change sanitizer to public
+    private museumService: MuseumService
   ) {}
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
-
     if (this.id === 'clear') {
       console.log('try again');
       return;
     }
 
-    try {
-      const museumDoc: any = this.firestore
-        .collection('museums')
-        .doc(this.id)
-        .get();
-      museumDoc.subscribe((snapshot: any) => {
-        if (snapshot.exists) {
-          this.museum = snapshot.data();
+    this.loadMuseumData();
+    this.loadArtsData();
+  }
 
-          this.goto = `https://www.google.com/maps/search/?api=1&query=${this.museum.map[0]},${this.museum.map[1]}`;
-        } else {
-          console.log('Museum not found');
-        }
-      });
+  async loadMuseumData() {
+    try {
+      this.museum = await this.museumService.getMuseumData(this.id);
     } catch (error) {
-      console.error('Error fetching museum data:', error);
+      // Handle error
     }
   }
-  options: google.maps.MapOptions = {
-    center: { lat: -31, lng: 147 },
-    zoom: 4,
-  };
+
+  async loadArtsData() {
+    try {
+      this.museumService.getArtsData(this.id).subscribe((arts: any[]) => {
+        this.arts = arts;
+        console.log(`Test ${this.arts}`);
+      });
+    } catch (error) {
+      // Handle error
+    }
+  }
 }
