@@ -1,0 +1,79 @@
+<app-side-navbar
+  [isExpanded]="sidebarExpanded"
+  (toggleSidebar)="sidebarExpanded = !sidebarExpanded"
+></app-side-navbar>
+
+<div
+  class="content-wrapper"
+  [ngStyle]="{ 'margin-left': sidebarExpanded ? '250px' : '150px' }"
+>
+  <h2>Museum data</h2>
+
+  <div class="input-wrapper">
+    <input
+      type="text"
+      placeholder="Filter by name"
+      [(ngModel)]="filterData"
+      (ngModelChange)="onInputChange($event)"
+    />
+
+    <i class="fa fa-search" aria-hidden="true"></i>
+  </div>
+
+  <div class="table-format">
+    <div class="center-table">
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        matSort
+        class="mat-elevation-z8"
+      >
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+          <td mat-cell *matCellDef="let museum">
+            <i (click)="redirectToDetailsPage(museum.id)" class="fa fa-eye"></i>
+            {{ museum.id }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <td mat-cell *matCellDef="let museum">{{ museum.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Category</th>
+          <td mat-cell *matCellDef="let museum">{{ museum.category }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="imageLink">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+          <td mat-cell *matCellDef="let museum">
+            <img
+              src="{{ museum.imageLink }}"
+              alt="Museum Image"
+              class="small-image"
+              (click)="openImageDialog(museum.imageLink)"
+            />
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="eventPlus">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Events</th>
+          <td mat-cell *matCellDef="let museum">
+            <i class="fa fa-plus" (click)="createEvent(museum.id)"></i>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <mat-paginator
+        [pageSize]="25"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        showFirstLastButtons
+      ></mat-paginator>
+    </div>
+  </div>
+</div>

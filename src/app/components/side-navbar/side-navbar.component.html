@@ -1,0 +1,52 @@
+<app-head-navbar></app-head-navbar>
+<div class="sidebar" [ngClass]="{ expanded: isExpanded }">
+  <div class="header">
+    <div class="logo" *ngIf="isExpanded">
+      <img src="assets/logo/logo-branco.png" alt="Logo" class="logo-img" />
+    </div>
+    <div class="toggle" (click)="handleSidebarToggle()">
+      <span class="chevron"></span>
+    </div>
+  </div>
+  <div class="content">
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/dashboard']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="title">Dashboard</div>
+      </div>
+    </div>
+
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/create-museum']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+            <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="title">Create Museum</div>
+      </div>
+    </div>
+
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/get-museums']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+            <i class="fa-solid fa-table"></i>
+        </div>
+        <div class="title">Get Museums</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"></div>
+</div>

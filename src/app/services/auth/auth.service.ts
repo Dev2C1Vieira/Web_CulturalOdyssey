@@ -28,7 +28,7 @@ export class AuthService {
 
       if (user) {
         if (result.additionalUserInfo?.isNewUser) {
-          await this.saveUserData(user);
+          await this.saveUserData(user, true);
           this.toastr.success('Account created with success! Welcome :)');
           this.router.navigate(['/']);
         } else {
@@ -37,11 +37,12 @@ export class AuthService {
             .doc(user.uid)
             .get()
             .toPromise();
-        
+
           const isAdmin = userDoc?.get('isAdmin');
           this.toastr.success('Login with successful!');
           if (isAdmin) {
-            // User is admin, redirect to dashboard
+            const firstLogin = userDoc?.get('firstLogin');
+
             this.router.navigate(['/dashboard']);
           } else {
             this.router.navigate(['/']);
@@ -63,7 +64,7 @@ export class AuthService {
 
       if (user) {
         if (credential.additionalUserInfo?.isNewUser) {
-          await this.saveUserData(user);
+          await this.saveUserData(user, false);
         }
       }
     } catch (error) {
@@ -71,16 +72,21 @@ export class AuthService {
     }
   }
 
-  private async saveUserData(user: firebase.User) {
+  private async saveUserData(user: firebase.User, isGoogleAuth: boolean) {
     try {
-      await this.firestore.collection('users').doc(user.uid).set({
+      let userData: any = {
         uid: user.uid,
-        displayName: user.displayName,
         email: user.email,
-        photoURL: user.photoURL,
-        firstLogin: false,
+        firstLogin: true,
         isAdmin: false,
-      });
+      };
+
+      if (isGoogleAuth) {
+        userData.displayName = user.displayName;
+        userData.photoURL = user.photoURL;
+      }
+
+      await this.firestore.collection('users').doc(user.uid).set(userData);
       console.log('User data saved to Firestore successfully');
     } catch (error) {
       console.error('Error saving user data to Firestore:', error);
