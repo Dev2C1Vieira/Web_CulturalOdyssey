@@ -28,10 +28,12 @@ import { ToastrModule } from 'ngx-toastr';
 import { MuseumCardComponent } from './components/museum-card/museum-card.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { BlackettVintageComponent } from './components/product/wines/vinho-do-porto/blackett-vintage/blackett-vintage.component';
+import { ProductTemplateComponent } from './components/product-template/product-template.component';
+import { MuseumTemplateComponent } from './components/museum-template/museum-template.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, DashboardComponent, LandingPageComponent, FooterComponent, MuseumCardComponent, WineCategoryComponent, FooterComponent, VinhoDoPortoComponent, ProductCardComponent, BlackettVintageComponent ],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, DashboardComponent, LandingPageComponent, FooterComponent, MuseumCardComponent, WineCategoryComponent, FooterComponent, VinhoDoPortoComponent, ProductCardComponent, BlackettVintageComponent, ProductTemplateComponent, MuseumTemplateComponent ],
   imports: [
     BrowserModule,
     FormsModule,
