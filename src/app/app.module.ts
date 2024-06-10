@@ -26,10 +26,11 @@ import { VinhoDoPortoComponent } from './components/museums/wines/vinho-do-porto
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MuseumCardComponent } from './components/museum-card/museum-card.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, DashboardComponent, LandingPageComponent, FooterComponent, MuseumCardComponent, WineCategoryComponent, FooterComponent, VinhoDoPortoComponent ],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, DashboardComponent, LandingPageComponent, FooterComponent, MuseumCardComponent, WineCategoryComponent, FooterComponent, VinhoDoPortoComponent, NavbarComponent ],
   imports: [
     BrowserModule,
     FormsModule,
