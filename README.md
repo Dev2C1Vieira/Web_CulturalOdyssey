@@ -15,3 +15,15 @@ Para utilizar a aplicação
   ng serve
 ```
     
+
+#Login as admin
+
+
+Email -> admin@gmail.com
+Password -> admin123
+
+#Login as user
+
+
+Email -> user@gmail.com
+Password -> user
